@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+   <title>Activity :: Properly</title>
+  <meta name="description" content="Simple Property Register Form with AngularJS & Material Design - Shaimaa Abbas">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+  <link rel='stylesheet prefetch' href='https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.7/angular-material.css'>
+  <link rel='stylesheet prefetch' href='https://material.angularjs.org/1.1.7/docs.css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+<div class="col-md-12">
+  <img src="images/logo.png" class="pull-right logo col-md-3 col-xs-12 col-sm-12"/>
+		 
+  <div ng-controller="AppCtrl as ctrl" class="md-padding container col-md-9 col-xs-12 col-sm-12" id="signup" ng-cloak="" layout="column" ng-app="MyApp">
+  <md-card class="signup-screen">
+  <center><img src="images/logo.png" class="hidden-lg hidden-md visible-sm visible-xs logomobile"/></center>
+  
+   <!----------------------------------------- HEADER ----------------------------------------> 
+  
+    <md-card-title>
+	
+      <md-card-title-text>
+        <h1>Tell us a little about your Property.</h1>
+      </md-card-title-text>
+    </md-card-title>
+
+	
+	 <!--------------------------------------- BODY ------------------------------------------> 
+  
+    <md-card-content layout-padding class="col-md-12">
+  
+    <form name="projectForm">
+	  <!----------------------------PROPERTY DESCRIPTION--------------------------------------> 
+    <div class="col-md-12">
+      <md-input-container class="md-block" class="col-md-12">
+        <label>Description</label>
+		<textarea  ng-model="user.biography" md-maxlength="300" rows="3" name="description" md-select-on-focus required></textarea>
+		<div ng-messages="projectForm.description.$error">
+          <div ng-message="required">The property description is required.</div>
+          <div ng-message="md-maxlength">The description must be less than 300 characters long.</div>
+        </div>
+      </md-input-container>
+</div>
+	  
+	  <!----------------------------PROPERTY Features----------------------------------------->   
+    <div class="col-md-12">
+	     <md-input-container class="md-block col-md-3 col-sm-12 col-xs-12 nomargin-bottom  nomargin-top">
+        <md-checkbox ng-model="view" aria-label="LandScape/ Sea view">
+            LandScape/ Sea view 
+          </md-checkbox>
+      </md-input-container>
+	  
+	    <md-input-container class="md-block col-md-3 col-sm-12 col-xs-12 nomargin-bottom  nomargin-top">
+          <md-checkbox ng-model="swimming" aria-label="Swimming pool">
+            Swimming pool
+          </md-checkbox>
+      </md-input-container>
+	  
+	    <md-input-container class="md-block col-md-3 col-sm-12 col-xs- nomargin-bottom  nomargin-top">
+          <md-checkbox ng-model="kids" aria-label="Safe for Kids">
+            Safe for Kids
+          </md-checkbox>
+      </md-input-container>
+	  
+	   <md-input-container class="md-block col-md-3 col-sm-12 col-xs-12 nomargin-bottom  nomargin-top">
+        <md-checkbox ng-model="gym" aria-label="Gym">
+            Gym 
+          </md-checkbox>
+      </md-input-container>
+     
+	     <md-input-container class="md-block col-md-3 col-sm-12 col-xs-12 nomargin-bottom nomargin-top ">
+        <md-checkbox ng-model="pet" aria-label="Pet Friendly">
+            Pet Friendly
+          </md-checkbox>
+      </md-input-container>
+	  
+	    <md-input-container class="md-block col-md-3 col-sm-12 col-xs-12 nomargin-bottom nomargin-top">
+          <md-checkbox ng-model="aircondition" aria-label=" Air Condition">
+            Air Condition
+          </md-checkbox>
+      </md-input-container>
+	  
+	    <md-input-container class="md-block col-md-3 col-sm-12 col-xs-12 nomargin-bottom nomargin-top">
+          <md-checkbox ng-model="Furnished" aria-label="Furnished">
+            Furnished
+          </md-checkbox>
+      </md-input-container>
+	  
+	   <md-input-container class="md-block col-md-3 col-sm-12 col-xs-12 nomargin-bottom nomargin-top">
+        <md-checkbox ng-model="smart" aria-label="smart">
+           Smart Home
+          </md-checkbox>
+      </md-input-container>
+	 </div>
+	 
+	  <!-------------------------------MORE PROPERTY FEATURES --------------------------------> 
+	<div class="col-md-12">
+	 
+    <label>Does the property has any more features you need to add?<span class="small"> Please type then Press Enter to add the feature </span></label>
+    <p class="small"><b>hint:</b> you can modify your input by clicking on it , edit , then click outside it going to be saved</p>
+    <md-chips ng-model="ctrl.editableFeatures" readonly="ctrl.readonly" md-removable="ctrl.removable"
+              md-enable-chip-edit="true"></md-chips>
+
+    <br/>
+
+	 
+	 </div>
+	 
+   
+   <div class="col-md-12" >
+	  <!-------------------------------PROPERTY TYPE---------------------------------> 
+	   <md-input-container class="col-md-3 col-sm-12 col-xs-12 nopadding-left">
+          <label>Property Type</label>
+          <md-select name="type" ng-model="project.type" name="propertyType" >
+            <md-option value="app" selected>House</md-option>
+            <md-option value="web">Condo</md-option>
+          </md-select>
+		  
+        </md-input-container>
+			
+		
+	  <!-------------------------------Bathroms--------------------------------------> 
+      <md-input-container class="col-md-2 nopadding-left col-sm-12 col-xs-12">
+        <label>Bathroom(s)</label>
+        <input required type="number" step="any" name="baths" ng-model="project.baths" min="1"
+               max="20"  />
+
+        <div ng-messages="projectForm.baths.$error" multiple >
+          <div ng-message="required">
+            bathrooms number required
+          </div>
+
+          <div ng-message="min">
+            The bedrooms should be at least 1.
+          </div>
+
+          <div ng-message="max">
+            The bedrooms should be less than 20
+          </div>
+        </div>
+      </md-input-container>
+	  
+	  
+	  <!-------------------------------Kitchens--------------------------------------> 
+	   <md-input-container class="col-md-2 nopadding-left col-sm-12 col-xs-12">
+        <label>Kitchen(s)</label>
+        <input required type="number" step="any" name="kitchen" ng-model="project.kitchen" min="1"
+               max="10"  />
+
+        <div ng-messages="projectForm.kitchen.$error" multiple >
+          <div ng-message="required">
+            kitchens number required
+          </div>
+
+          <div ng-message="min">
+            The kitchen should be at least 1.
+          </div>
+
+          <div ng-message="max">
+            The kitchen should be less than 10
+          </div>
+        </div>
+      </md-input-container>
+	  
+	  
+	 <!-------------------------------Bedrooms---------------------------------------> 
+	   <md-input-container class="col-md-2 nopadding-left col-sm-12 col-xs-12">
+        <label>Bedroom(s)</label>
+        <input required type="number" step="any" name="bed" ng-model="project.bed" min="1"
+               max="10"  />
+
+        <div ng-messages="projectForm.bed.$error" multiple >
+          <div ng-message="required">
+           bedrooms number required
+          </div>
+
+          <div ng-message="min">
+            The bedrooms should be at least 1.
+          </div>
+
+          <div ng-message="max">
+            The bedrooms should be less than 10
+          </div>
+        </div>
+      </md-input-container>
+	  
+
+	 <!-------------------------------Price------------------------------------------> 
+	   <md-input-container class="col-md-3 col-sm-12 col-xs-12 nopadding-left">
+        <label>Price (CAD)</label>
+        <input required type="number" step="any" name="rate" ng-model="project.rate" min="50000"
+               max="100000000"  />
+
+        <div ng-messages="projectForm.rate.$error" multiple >
+          <div ng-message="required">
+            You've got to charge something! You can't just <b>give away</b> your property.
+          </div>
+
+          <div ng-message="min">
+            You should charge at least $50000 as the properties worth. This is a big deal... if you mess up,
+            everyone dies!
+          </div>
+
+          <div ng-message="max">
+            {{projectForm.rate.$viewValue | currency:"$":0}} for your property? That's a little ridiculous. I
+            doubt even Bill Clinton could afford that.
+          </div>
+        </div>
+      </md-input-container>
+</div>
+	  
+	 <!-------------------------------LAND LORD DATA---------------------------------> 
+
+      <div class="col-md-12">
+	  
+	 <!------------------------------- NAME---------------------------------> 
+
+        <md-input-container class="col-md-4 nopadding-left col-sm-12 col-xs-12">
+          <label>Land Lord Name</label>
+          <input required name="landLordName" ng-model="project.landLordName">
+          <div ng-messages="projectForm.landLordName.$error">
+            <div ng-message="required">Land Lord name is required.</div>
+          </div>
+        </md-input-container>
+		
+     <!------------------------------- PHONE--------------------------------> 
+
+        <md-input-container class="col-md-4 nopadding-left col-sm-12 col-xs-12">
+          <label>Land Lord Phone</label>
+          <input required name="landLordPhone" phone-input ng-model="project.landLordPhone">
+          <div ng-messages="projectForm.landLordPhone.$error">
+            <div ng-message="required">Land Lord phone is required.</div>
+          </div>
+        </md-input-container>
+		
+	 <!------------------------------- EMAIL--------------------------------> 
+
+       <md-input-container class="col-md-4 nopadding-left col-sm-12 col-xs-12">
+        <label>Land Lord Email</label>
+        <input required type="email" name="landlordEmail" ng-model="project.landlordEmail"
+               minlength="10" maxlength="100" ng-pattern="/^.+@.+\..+$/" />
+
+        <div ng-messages="projectForm.landlordEmail.$error" role="alert">
+          <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
+            land lord email must be between 10 and 100 characters long and look like an e-mail address.
+          </div>
+        </div>
+      </md-input-container>
+       
+      </div>
+	  
+	   <!-------------------------------PROPERTY ADDRESS ----------------------------> 
+	  	         
+	  <div class="col-md-12">
+			
+			  <!-----------------------STREET ----------------------------> 
+			  
+        <md-input-container class="col-md-4 nopadding-left col-sm-12 col-xs-12">
+          <label>Street Name</label>
+          <input name="street" required ng-model="project.street">
+		  
+		  <div ng-messages="projectForm.street.$error">
+            <div ng-message="required">Street name is required.</div>
+          </div>
+		  
+		  
+        </md-input-container>
+
+		      <!------------------------CITY -----------------------------> 
+	  
+        <md-input-container class="col-md-3 nopadding-left col-sm-12 col-xs-12">
+          <label>City</label>
+          <input name="city" ng-model="project.city" required>
+		  
+		  <div ng-messages="projectForm.city.$error">
+            <div ng-message="required">City is required.</div>
+          </div>
+		  
+        </md-input-container>
+
+		      <!-----------------------Province --------------------------> 
+	  
+        <md-input-container class="col-md-3 nopadding-left col-sm-12 col-xs-12">
+          <label>Province</label>
+          <md-select ng-model="ctrl.userProvince"  >
+            <md-option><em>None</em></md-option>
+            <md-option ng-repeat="province in ctrl.provinces" ng-value="province.abbrev" ng-disabled="$index === 1">
+              {{province.abbrev}}
+            </md-option>
+          </md-select>
+        </md-input-container>
+      
+	  
+		      <!------------------------POSTAL -----------------------------> 
+	  
+        <md-input-container class="col-md-2 nopadding-left col-sm-12 col-xs-12">
+          <label>Postal Code</label>
+          <input name="postal" ng-model="project.postal" required check-postal>
+		  <div ng-messages="projectForm.postal.$error">
+            <div ng-message="required">Postal Code is required.</div>
+			<div ng-message="postal"> Postal Code must be in this format 'A0A0A0' Note: Capitalize the letters </div>
+          </div>
+        </md-input-container>
+	  
+	  
+	  
+	  </div>
+	  
+
+	   <!------------------------------ ACCEPT TERMS AND CONDITIONS -----------------> 
+	  
+      <md-input-container class="col-md-12">
+        <md-checkbox name="tos" ng-model="project.tos" required>
+          I accept the terms of service.
+        </md-checkbox>
+        <div ng-messages="projectForm.tos.$error" multiple md-auto-hide="false">
+          <div ng-message="required">
+            You must accept the terms of service before you can proceed.
+          </div>
+        </div>
+      </md-input-container>
+
+
+	  
+	   <!------------------------------ ACTION BUTTONS ------------------------------> 
+	  <div>
+		<div class="col-md-12">
+		<button ng-disabled="form-register.$invalid" class="waves-effect waves-light btn done col-md-2 pull-right">Done</button>
+			   <div  class="col-md-1 pull-right nopadding"></div>
+        <button type="button" class="waves-effect waves-light btn cancel col-md-2 pull-right">
+               Cancel
+               </button>
+			   
+			   
+			</div>   
+      </div>
+
+ 	  
+    </form>
+  </md-card-content>
+  </md-card>
+</div>
+
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.js'></script>
+<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular-animate.min.js'></script>
+<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular-route.min.js'></script>
+<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular-aria.min.js'></script>
+<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular-messages.min.js'></script>
+<script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-114/svg-assets-cache.js'></script>
+<script src='https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.7/angular-material.js'></script>
+<script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,157 @@
+html.md-default-theme, html, body.md-default-theme, body
+{
+		background: url(../images/bg.jpg) !important;
+		    min-height:100%;
+	background: url(../images/bg.jpg) !important;
+	background-size: cover !important;
+    background-attachment: fixed !important;
+}
+.text-center{
+  text-align: center;
+}
+
+.space-bot{
+  margin-bottom: 35px;
+}
+
+.space-top{
+  margin-top: 35px;
+}
+
+
+h1 {
+    color: #22292b !important;
+    font-family: 'Roboto';
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 19px;
+    text-align: center;
+}
+label{color:#978694;}
+
+.logo{   
+    position: fixed;
+    right: 0;
+	top:20px;}
+
+	.logomobile{
+		width: 50%;
+	}
+/* Sign Up */
+
+.container {
+    min-height: 100% !important;
+    margin-top: 10px;
+	background:transparent !important;
+}
+
+.alert-danger{
+	text-align: center;
+}
+
+.signup-screen {
+	  padding: 20px;
+    padding-bottom: 40px;
+    border-radius: 5px 5px 5px 5px;
+    background-color: #ffffffeb;
+    box-shadow: 0 1px 6px rgba(0,0,0,.3);
+    color: #1ca4c2 !important;
+}
+
+.btn{
+  border-radius: 2px;
+}
+
+.cancel{
+  background-color: #df405a;
+  color: #fff !important;
+}
+
+.done{
+  background-color: #7b277d;
+    color: #fff !important;
+}
+
+
+.input-group {
+    width:100%;
+}
+
+.input-group .ng-invalid {
+    border: 2px solid #e74c3c;
+    border-radius: 3px;
+}
+
+/* Error Box */
+
+.alert{
+  padding: 0;
+  margin: -15px 0;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  color: #f00;
+  
+}
+
+.help-block {
+    font-size: 12px;
+    color: white
+}
+
+
+md-input-container.md-default-theme .md-input, md-input-container .md-input
+{
+	color: rgb(28, 164, 194) !important;
+}
+
+.selectdemoBasicUsage md-input-container {
+  margin-right: 10px; }
+
+md-icon
+{
+	    min-height: 12px !important;
+    min-width: 12px !important;
+}
+
+md-chips.md-default-theme md-chip, md-chips md-chip {
+    color: rgb(28, 164, 194) !important;
+	font-weight:normal !important;
+	font-size:12px  !important;
+}
+
+.md-chips .md-chip-input-container
+ , .md-chips .md-chip-input-container input:not([type])
+{
+	width:100% !important;
+}
+
+.md-chips .md-chip-input-container
+{
+	margin-top:-5px;
+}
+md-checkbox.md-default-theme.md-checked .md-icon, md-checkbox.md-checked .md-icon {
+    background-color: rgb(28, 171, 209) !important;
+}
+
+md-checkbox .md-label
+{
+	color: #978694;
+}
+
+md-chips.md-default-theme .md-chips .md-chip-input-container input, md-chips .md-chips .md-chip-input-container input , md-chips.md-default-theme .md-chip.md-focused ,  md-chips .md-chip.md-focused{
+    color: rgb(28, 172, 208) !important;
+    font-weight: normal !important;
+}
+
+md-chips.md-default-theme md-chip.md-focused, md-chips md-chip.md-focused{
+
+	background:rgb(224,224,224) !important;
+}
+
+.nopadding{padding:0 !important;}
+.nopadding-left{padding-left:0 !important;}
+.nopadding-right{padding-right:0 !important;}
+
+.nopadding-top{padding-top:0 !important;}
+.nomargin-top{margin-top:0 !important;}
+.nomargin-bottom{margin-bottom:0 !important;}
