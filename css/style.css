@@ -155,3 +155,19 @@ md-chips.md-default-theme md-chip.md-focused, md-chips md-chip.md-focused{
 .nopadding-top{padding-top:0 !important;}
 .nomargin-top{margin-top:0 !important;}
 .nomargin-bottom{margin-bottom:0 !important;}
+
+
+.md-icon-button + .md-datepicker-input-container {
+    
+    width: 80%;
+	margin-left:-10px
+}
+.icons-property{   
+        position: absolute;
+    right: 33px;
+    color: #c4c3c38f;}
+	.square{
+		position:absolute;
+		right:0;
+		color: #c4c3c38f;
+	}

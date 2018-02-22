@@ -115,7 +115,7 @@
    
    <div class="col-md-12" >
 	  <!-------------------------------PROPERTY TYPE---------------------------------> 
-	   <md-input-container class="col-md-3 col-sm-12 col-xs-12 nopadding-left">
+	   <md-input-container class="col-md-4 col-sm-12 col-xs-12 nopadding-left">
           <label>Property Type</label>
           <md-select name="type" ng-model="project.type" name="propertyType" >
             <md-option value="app" selected>House</md-option>
@@ -123,11 +123,39 @@
           </md-select>
 		  
         </md-input-container>
-			
 		
-	  <!-------------------------------Bathroms--------------------------------------> 
-      <md-input-container class="col-md-2 nopadding-left col-sm-12 col-xs-12">
-        <label>Bathroom(s)</label>
+		
+		 <!---------------------------- Year of Building ---------------------------> 
+	   <md-input-container flex="100" layout="column" class="col-md-4 nopadding-left col-sm-12 col-xs-12">
+	    <label>Year the home was built</label>
+          <md-datepicker ng-model="dateFields.selectedDate"
+                     ng-required="dateFields.required"
+                     md-date-locale="dateFields.locale"
+                     md-mode="month"
+                     md-open-on-focus="true">
+        </md-datepicker>
+       </md-input-container>
+			
+			
+				
+		 <!---------------------------- Size of the unit ---------------------------> 
+	  <md-input-container class="col-md-4 nopadding-left col-sm-12 col-xs-12">
+        <label>Unit Size</label> <p class="icons-property">SQ m.</p>
+        <input required type="number" step="any" name="size" ng-model="project.size" />
+
+        <div ng-messages="projectForm.size.$error" multiple >
+          <div ng-message="required">
+            Size required
+          </div>
+        </div>
+      </md-input-container>
+			</div>
+			
+			 <div class="col-md-12" >
+		
+	  <!-------------------------------Bathrooms--------------------------------------> 
+      <md-input-container class="col-md-3 nopadding-left col-sm-12 col-xs-12">
+        <label>Bathroom(s)</label> <i class="material-icons icons-property">hot_tub</i>
         <input required type="number" step="any" name="baths" ng-model="project.baths" min="1"
                max="20"  />
 
@@ -148,8 +176,8 @@
 	  
 	  
 	  <!-------------------------------Kitchens--------------------------------------> 
-	   <md-input-container class="col-md-2 nopadding-left col-sm-12 col-xs-12">
-        <label>Kitchen(s)</label>
+	   <md-input-container class="col-md-3 nopadding-left col-sm-12 col-xs-12">
+        <label>Kitchen(s)</label> <i class="material-icons icons-property">restaurant</i>
         <input required type="number" step="any" name="kitchen" ng-model="project.kitchen" min="1"
                max="10"  />
 
@@ -170,8 +198,8 @@
 	  
 	  
 	 <!-------------------------------Bedrooms---------------------------------------> 
-	   <md-input-container class="col-md-2 nopadding-left col-sm-12 col-xs-12">
-        <label>Bedroom(s)</label>
+	   <md-input-container class="col-md-3 nopadding-left col-sm-12 col-xs-12">
+        <label>Bedroom(s)</label> <i class="material-icons icons-property">hotel</i>
         <input required type="number" step="any" name="bed" ng-model="project.bed" min="1"
                max="10"  />
 
@@ -193,7 +221,7 @@
 
 	 <!-------------------------------Price------------------------------------------> 
 	   <md-input-container class="col-md-3 col-sm-12 col-xs-12 nopadding-left">
-        <label>Price (CAD)</label>
+        <label>Price (CAD)</label> <i class="material-icons icons-property">attach_money</i>
         <input required type="number" step="any" name="rate" ng-model="project.rate" min="50000"
                max="100000000"  />
 
@@ -208,8 +236,7 @@
           </div>
 
           <div ng-message="max">
-            {{projectForm.rate.$viewValue | currency:"$":0}} for your property? That's a little ridiculous. I
-            doubt even Bill Clinton could afford that.
+            {{projectForm.rate.$viewValue | currency:"$":0}} for your property? That's a little ridiculous. even Bill Clinton could afford that.
           </div>
         </div>
       </md-input-container>
