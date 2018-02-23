@@ -21,9 +21,10 @@ A basic form requesting a handful of pieces of information related to a real est
 
 ## Compatable Browsers
 
-Google Chrome Version 64.0.3282.167
-FireFox Version 58.0.2
-Internet Explorer Version 11.243
+* Google Chrome Version 64.0.3282.167
+* FireFox Version 58.0.2
+* Internet Explorer Version 11.243
+* Mobile Devices 
 
 ## The Fields of the form & Validation :
 
