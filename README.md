@@ -7,15 +7,17 @@ A basic form requesting a handful of pieces of information related to a real est
 
 ## Frameworks Used in this project
 
-
 * [AngularJS](https://material.angularjs.org/latest/) - The web framework used
-* [Material Design] - I choose the style of material design because the input fields are not few so it will help to clear and simplify it design in addition of that I like this trend 
+* [Material Design] - I choose the style of material design because the input fields are not few so it will help to clear and simplify its design in addition of that : material design is nowadays trend
 * [Bootstrap](https://getbootstrap.com/) I used Bootstrap to help in responsive without the need to use media query
 * [Html5]
 * [CSS3]
 * [Java Script]
 
 
+## Total hours Spent
+
+8 hours 
 
 
 ## The Fields of the form & Validation :
