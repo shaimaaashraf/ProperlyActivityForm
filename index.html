@@ -13,10 +13,24 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body >
+
+
+
+<div id="page-loading">
+<div class="loader">
+<i class="loadertile loadertile1"></i>
+<i class="loadertile2 loadertile2"></i>
+<i class="loadertile2 loadertile3"></i>
+<i class="loadertile loadertile4"></i>
+</div>
+</div>
+
+
+
+
 <div class="col-md-12">
   <img src="images/logo.png" class="pull-right logo col-md-3 col-xs-12 col-sm-12"/>
-		 
   <div ng-controller="AppCtrl as ctrl" class="md-padding container col-md-9 col-xs-12 col-sm-12" id="signup" ng-cloak="" layout="column" ng-app="MyApp">
   <md-card class="signup-screen">
   <center><img src="images/logo.png" class="hidden-lg hidden-md visible-sm visible-xs logomobile"/></center>
@@ -24,7 +38,6 @@
    <!----------------------------------------- HEADER ----------------------------------------> 
   
     <md-card-title>
-	
       <md-card-title-text>
         <h1>Tell us a little about your Property.</h1>
       </md-card-title-text>
@@ -34,7 +47,6 @@
 	 <!--------------------------------------- BODY ------------------------------------------> 
   
     <md-card-content layout-padding class="col-md-12">
-  
     <form name="projectForm">
 	  <!----------------------------PROPERTY DESCRIPTION--------------------------------------> 
     <div class="col-md-12">
@@ -376,6 +388,15 @@
 
 </div>
 
+
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function(event) {
+        /*VANILLA JAVASCRIPT*/
+        var element = document.getElementById("page-loading");
+        
+        $('#page-loading').fadeOut(2000);
+    });
+</script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.js'></script>
